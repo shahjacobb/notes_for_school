@@ -40,7 +40,7 @@ And we assume that GPA is $A$ and Priority is $B$. Then we made up a dependency.
 Assume we have this table that needs to go through the normalization process. 
 1. **1NF**
 	* The rules of 1NF are: a relation cannot have repeating groups, has to have non-atomic cells, and **every row must be unique**
-2. 2NF 
+2. **2NF** 
 	- The rules for 2NF remove any **partial dependencies**. A partial dependency is a functional dependency where a non-key attribute is dependent on a subset (PORTION) of the composite key. 
 		- This also means if your PK is one column, by definition you can't have partial dependencies.
 
@@ -148,4 +148,4 @@ Now we need to scan for any partial dependencies. Basically every column but `Au
 		* If X is not a candidate key, then we need to take everything X -> Y (and any other candidates) and **make them into a separate table**
 	* Example:
 		* In the previous tables, **Library_Branches_3NF** is in BCNF since there's only one deteriminant, and that determinant is a key. **Loan_Dates_3NF** is not in **BCNF** because technically speaking, return date depends on loan date. And, **Borrowers_3NF** is obviously in **BCNF** since the only determinant is actually a candidate key.
-	* 
+	
